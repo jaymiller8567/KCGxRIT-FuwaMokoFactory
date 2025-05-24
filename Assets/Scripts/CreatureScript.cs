@@ -36,4 +36,9 @@ public class CreatureScript : MonoBehaviour
             transform.position += velocity * Time.deltaTime;
         }
     }
+
+    public void AddSpeed(float addVelocity)
+    {
+        velocity.y += addVelocity;
+    }
 }

@@ -9,10 +9,13 @@ public class CreatureManagerScript : MonoBehaviour
 	[SerializeField] private GameManager gameManager;
 
 
-	[SerializeField, Tooltip("second")] private int[] spawnIntervalTimeArray;
+	[SerializeField, Tooltip("second * 60fps")] private int[] spawnIntervalTimeArray;
+
+
+	[SerializeField, Tooltip("creatureSpeedUp")] private int speedCreatureUp;
+	[SerializeField, Tooltip("second * 60fps")] private int speedUpIntervalTime;
 	private int speedUpLevel;
 	private int frame;
-	[SerializeField, Tooltip("second")] private int speedUpIntervalTime;
 
 	private List<GameObject> creatureList = new List<GameObject>();
 
@@ -59,6 +62,8 @@ public class CreatureManagerScript : MonoBehaviour
 	//Spawn Creature and Add Creature List
 	void CreateCreature()
 	{
-		creatureList.Add(Instantiate(creaturePrefab));
+		var creature = Instantiate(creaturePrefab);
+		creatureList.Add(creature);
+		creature.GetComponent<CreatureScript>().AddSpeed(speedCreatureUp * speedUpLevel);
 	}
 }
