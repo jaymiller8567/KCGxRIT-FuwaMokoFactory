@@ -18,13 +18,15 @@ public class CreatureScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y > -1)
-        {
-            transform.position += velocity;
-        }
-        else
-        {
+        if (!gameManager.isPaused) { 
+            if (transform.position.y > -1)
+            {
+                transform.position += velocity;
+            }
+            else
+            {
             
+            }
         }
     }
 }
