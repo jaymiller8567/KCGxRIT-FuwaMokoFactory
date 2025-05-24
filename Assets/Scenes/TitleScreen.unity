@@ -180,7 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: CREDITS
+  m_text: credits
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 35701f88f589b6f41bfd4ea33c301536, type: 2}
   m_sharedMaterial: {fileID: 8562722741294856779, guid: 35701f88f589b6f41bfd4ea33c301536, type: 2}
@@ -215,7 +215,7 @@ MonoBehaviour:
   m_fontSizeMax: 0
   m_fontStyle: 1
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 1024
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -974,7 +974,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4368626207445690380, guid: bc7de468291e37e44876604a62c25ac3, type: 3}
       propertyPath: m_text
-      value: START
+      value: start!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4368626207445690380, guid: bc7de468291e37e44876604a62c25ac3, type: 3}
+      propertyPath: m_margin.w
+      value: 4.395752
+      objectReference: {fileID: 0}
+    - target: {fileID: 4368626207445690380, guid: bc7de468291e37e44876604a62c25ac3, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 1024
       objectReference: {fileID: 0}
     - target: {fileID: 4368626207445690380, guid: bc7de468291e37e44876604a62c25ac3, type: 3}
       propertyPath: m_HorizontalAlignment
