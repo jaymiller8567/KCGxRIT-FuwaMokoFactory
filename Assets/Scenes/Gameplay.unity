@@ -317,7 +317,7 @@ MonoBehaviour:
   rb: {fileID: 898487475}
   boxCollider: {fileID: 898487474}
   startPosition: {x: 0, y: 7}
-  velocity: {x: 0, y: -0.01, z: 0}
+  velocity: {x: 0, y: -0.008, z: 0}
 --- !u!61 &898487474
 BoxCollider2D:
   m_ObjectHideFlags: 0
