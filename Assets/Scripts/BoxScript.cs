@@ -9,11 +9,11 @@ public class BoxScript : MonoBehaviour
 	private int boxInCreatureNum;
 	[SerializeField] private int maxCreatureNum;
 	[SerializeField] private Sprite[] closeSprite;
-	[SerializeField] private GameObject box;
 	private int closeSpriteNum;
 	private bool close;
 	private bool spawnNextBoxOnce;
 	private int spriteNextTime;
+	private bool start = true;
 	[HideInInspector] public GameObject boxManager;
 	[HideInInspector] public int boxNumber;
 
@@ -22,11 +22,26 @@ public class BoxScript : MonoBehaviour
 	{
 		boxInCreatureNum = spriteNextTime = closeSpriteNum = 0;
 		close = spawnNextBoxOnce = false;
+		start = true;
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
+		if(start)
+        {
+			if (this.transform.position.y <= 0)
+            {
+				this.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
+				this.transform.position = new Vector3(this.transform.position.x, 0, 0);
+				start = false;
+			}
+            else
+            {
+				GetComponent<Rigidbody2D>().velocity += new Vector2(0, -5);
+			}
+		}
+
 		if(close && !spawnNextBoxOnce)
         {
 			ColorChangeAlpha();
@@ -35,8 +50,6 @@ public class BoxScript : MonoBehaviour
             {
 				//close sprite change
 				this.GetComponent<SpriteRenderer>().sprite = closeSprite[closeSpriteNum];
-
-				Debug.Log(this.gameObject);
 			}
             else
             {
@@ -45,7 +58,7 @@ public class BoxScript : MonoBehaviour
 			}
 
 			//sprite change number
-            if (++spriteNextTime % 10==0)
+            if (++spriteNextTime % 3==0)
             {
 				++closeSpriteNum;
 			}
@@ -75,7 +88,7 @@ public class BoxScript : MonoBehaviour
 
 			foreach (var creature in inCreatureArray)
 			{
-				//Destroy(creature);
+				Destroy(creature);
 			}
 
 			spawnNextBoxOnce = true;

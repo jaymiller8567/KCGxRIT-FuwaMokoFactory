@@ -58,6 +58,8 @@ public class CreatureManagerScript : MonoBehaviour
 			// Destroy creatures if they are inactive
 			for (int i = 0; i < creatureList.Count; ++i)
 			{
+				if (creatureList[i] == null) return;
+
 				if (!creatureList[i].activeInHierarchy)
 				{
 					Destroy(creatureList[i]);
