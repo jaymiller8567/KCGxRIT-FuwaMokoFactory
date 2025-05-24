@@ -8,14 +8,15 @@ public class CreatureManagerScript : MonoBehaviour
 	[SerializeField] private GameManager gameManager;
 
 	[SerializeField, Tooltip("second * 60fps")] private int[] spawnIntervalTimeArray;
-	[SerializeField, Tooltip("creatureSpeedUp")] private int speedCreatureUp;
+	[SerializeField, Tooltip("creatureSpeedUp")] private float speedCreatureUp;
 	[SerializeField, Tooltip("second * 60fps")] private int speedUpIntervalTime;
 	private int speedUpLevel;
 	private int frame;
 
-	[SerializeField] private float destroyPosition = -7.0f;
-
 	private List<GameObject> creatureList = new List<GameObject>();
+	private float creatureVelocity = -1.0f;
+
+	public float CreatureVelocity { get { return creatureVelocity; } }
 
 	// Start is called before the first frame update
 	void Start()
@@ -73,5 +74,6 @@ public class CreatureManagerScript : MonoBehaviour
 		var creature = Instantiate(creaturePrefab);
 		creatureList.Add(creature);
 		creature.GetComponent<CreatureScript>().AddSpeed(speedCreatureUp * speedUpLevel);
+		creatureVelocity += speedCreatureUp * speedUpLevel;
 	}
 }
