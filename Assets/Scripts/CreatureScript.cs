@@ -21,8 +21,24 @@ public class CreatureScript : MonoBehaviour
 
     private int spriteIndex;
     private int colorIndex;
+    private bool isRainbow = false;
 
     public bool IsCollected { get { return isCollected; } set { isCollected = value; } }
+    public string Type { 
+        get 
+        {
+            switch (spriteIndex)
+            {
+                case 0:
+                    return "fuwa";
+                case 1:
+                    return "moco";
+                case 2:
+                    return "toge";
+                default:
+                    return "INVALID";
+            }
+        } }
 
     // Start is called before the first frame update
     void Start()
@@ -39,11 +55,13 @@ public class CreatureScript : MonoBehaviour
         spriteIndex = Random.Range(0, sprites.Count);
         spriteRenderer.sprite = sprites[spriteIndex];
 
-        // Small chance for sprite to be rainbow and color changing (3% chance as requested)
-        if (Random.value < 0.03f)
+        // Small chance for sprite to be rainbow(3% chance)
+        if (Random.value <= 0.03f)
         {
             spriteRenderer.color = Color.white;
-            spriteRenderer.sprite = sprites[spriteIndex];
+            spriteIndex = Random.Range(0, rainbowSprites.Count);
+            spriteRenderer.sprite = rainbowSprites[spriteIndex];
+            isRainbow = true;
         }
     }
 
