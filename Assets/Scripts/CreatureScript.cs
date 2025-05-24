@@ -12,6 +12,8 @@ public class CreatureScript : MonoBehaviour
     [SerializeField] private Vector2 startPosition;
     [SerializeField] private Vector3 velocity;
 
+    [HideInInspector] public GameObject inBox;
+
     [SerializeField] private List<Sprite> sprites = new List<Sprite>();
     [SerializeField] private List<Color> colors = new List<Color>();
 
@@ -54,5 +56,10 @@ public class CreatureScript : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
+    }
+
+    public void ResetVelocity()
+    {
+        velocity = new Vector3(0, 0, 0);
     }
 }

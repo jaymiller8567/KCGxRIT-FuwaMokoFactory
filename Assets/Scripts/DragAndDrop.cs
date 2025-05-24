@@ -11,7 +11,7 @@ public class DragAndDrop : MonoBehaviour
     private bool isDraggable;
 
     // Is it currently being dragged?
-    private bool isDragging;
+    [HideInInspector]public bool isDragging;
 
     // Can it be moved (is it locked?)
     public bool isLocked;
@@ -84,6 +84,14 @@ public class DragAndDrop : MonoBehaviour
             {
                 isDraggable = false;
                 isDragging = false;
+
+                //ADDED BY YUU
+                if (GetComponent<CreatureScript>().inBox != null)
+                {
+                    GetComponent<CreatureScript>().inBox.GetComponent<BoxScript>().InCreatureBox();
+                    return;
+                }
+                   
 
                 // ADDED BY HENRY
                 transform.position = new Vector3(0, Mathf.Clamp(transform.position.y, -1, 10), 0);

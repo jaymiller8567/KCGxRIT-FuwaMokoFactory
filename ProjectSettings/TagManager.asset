@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Box
+    uniqueID: 2979833099
+    locked: 0
+  - name: Creature
+    uniqueID: 2059585679
+    locked: 0
