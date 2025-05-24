@@ -8,6 +8,7 @@ public class CreatureScript : MonoBehaviour
     [SerializeField] private BoxCollider2D boxCollider;
     [SerializeField] private Vector2 startPosition;
     [SerializeField] private Vector3 velocity;
+    [SerializeField] private GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
