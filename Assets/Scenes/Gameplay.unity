@@ -738,7 +738,7 @@ MonoBehaviour:
   creaturePrefab: {fileID: 2231380602085275401, guid: 1824d8be09f796949ba67fac63b6fa84, type: 3}
   gameManager: {fileID: 1681660233}
   spawnIntervalTimeArray: b4000000780000003c000000
-  speedCreatureUp: 0
+  speedCreatureUp: -0.5
   speedUpIntervalTime: 1800
   destroyPosition: -10
 --- !u!1 &1163584276
