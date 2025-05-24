@@ -106,9 +106,15 @@ MonoBehaviour:
   startPosition: {x: 0, y: 7}
   velocity: {x: 0, y: -2, z: 0}
   sprites:
-  - {fileID: 21300000, guid: f9c140d7b80632e47a3a2d16ed32bdd5, type: 3}
+  - {fileID: 21300000, guid: 2df1639b979e376448ec6d481731edfc, type: 3}
+  - {fileID: 21300000, guid: faf1b88dc99abb04bbaa540ea03d3e7e, type: 3}
   colors:
-  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 0.74509805, g: 0.7882353, b: 0.9647059, a: 1}
+  - {r: 0.72156864, g: 0.8980392, b: 0.8745098, a: 1}
+  - {r: 0.8666667, g: 0.8980392, b: 0.7254902, a: 1}
+  - {r: 0.94509804, g: 0.92156863, b: 0.7372549, a: 1}
+  - {r: 0.9411765, g: 0.85490197, b: 0.7294118, a: 1}
+  - {r: 0.9607843, g: 0.85882354, b: 0.8627451, a: 1}
 --- !u!50 &7054262547107175662
 Rigidbody2D:
   serializedVersion: 4
@@ -179,7 +185,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4, y: 4}
+  m_Size: {x: 3, y: 3}
   m_EdgeRadius: 0
 --- !u!114 &2448472499851914955
 MonoBehaviour:
