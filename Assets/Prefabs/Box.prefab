@@ -171,13 +171,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40dc2eba20993d045a0302fc8163c220, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxCreatureNum: 3
+  maxCreatureNum: 10
   closeSprite:
   - {fileID: 21300000, guid: 254df67c3a7e43a429037b444876f05f, type: 3}
   - {fileID: 21300000, guid: 136b03e3d9660194bb7e14a76fe102e7, type: 3}
   - {fileID: 21300000, guid: 22f856aa4e329684989bc53e113c7128, type: 3}
   - {fileID: 21300000, guid: c5ab5b701058b69498903dfcecd3b06c, type: 3}
   - {fileID: 21300000, guid: 320dec6a8e7e78347b41134f7d273e0c, type: 3}
-  box: {fileID: 2074243002825168931}
   boxManager: {fileID: 0}
   boxNumber: 0
