@@ -50,7 +50,10 @@ public class CreatureManagerScript : MonoBehaviour
 					// Speed up existing creatures
 					foreach (var creature in creatureList)
 					{
-                        creature.GetComponent<CreatureScript>().AddSpeed(speedCreatureUp * speedUpLevel);
+						if (creature != null)
+						{
+                            creature.GetComponent<CreatureScript>().AddSpeed(speedCreatureUp * speedUpLevel);
+                        }
                     }
 				}
 			}

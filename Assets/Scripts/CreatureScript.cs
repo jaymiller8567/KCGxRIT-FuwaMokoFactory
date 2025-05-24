@@ -11,11 +11,14 @@ public class CreatureScript : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Vector2 startPosition;
     [SerializeField] private Vector3 velocity;
+    private bool isCollected = false;
 
     [HideInInspector] public GameObject inBox;
 
     [SerializeField] private List<Sprite> sprites = new List<Sprite>();
     [SerializeField] private List<Color> colors = new List<Color>();
+
+    public bool IsCollected { get { return isCollected; } set { isCollected = value; } }
 
     // Start is called before the first frame update
     void Start()
@@ -46,7 +49,10 @@ public class CreatureScript : MonoBehaviour
 
     public void AddSpeed(float addVelocity)
     {
-        velocity.y += addVelocity;
+        if (!isCollected)
+        {
+            velocity.y += addVelocity;
+        }
     }
 
     private void CheckToBeRemoved()

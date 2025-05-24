@@ -133,7 +133,8 @@ public class BoxScript : MonoBehaviour
 	public void InCreatureBox()
 	{
 		hitCreature.GetComponent<CreatureScript>().ResetVelocity();
-		Destroy(hitCreature.GetComponent<DragAndDrop>());
+        hitCreature.GetComponent<CreatureScript>().IsCollected = true;
+        Destroy(hitCreature.GetComponent<DragAndDrop>());
 		inCreatureArray.Add(hitCreature);
 
 		hitCreature = null;
