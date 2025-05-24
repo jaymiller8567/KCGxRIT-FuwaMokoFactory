@@ -5,9 +5,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    
     public Canvas pauseMenu;
-    public static bool isPaused = false;
+    public bool isPaused = false;
 
     // Start is called before the first frame update
     void Start()

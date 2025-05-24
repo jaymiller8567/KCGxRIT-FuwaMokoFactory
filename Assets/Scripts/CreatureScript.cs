@@ -9,6 +9,7 @@ public class CreatureScript : MonoBehaviour
     [SerializeField] private Vector2 startPosition;
     [SerializeField] private Vector3 velocity;
 
+    [SerializeField] private GameManager gameManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,8 @@ public class CreatureScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!gameManager.isPaused) { 
         transform.position += velocity;
+        }
     }
 }
