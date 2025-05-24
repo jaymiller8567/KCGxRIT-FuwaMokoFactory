@@ -19,6 +19,8 @@ public class DragAndDrop : MonoBehaviour
     // Collider for the object
     private Collider2D objectCollider;
 
+    private GameManager gameManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,11 +28,17 @@ public class DragAndDrop : MonoBehaviour
         isDraggable = false;
         isDragging = false;
         isLocked = false;
+
+        // Get game manager
+        gameManager = Object.FindObjectsOfType<GameManager>()[0];
     }
 
     void Update()
     {
-        DragAndDropMethod();
+        if (!gameManager.isPaused)
+        {
+            DragAndDropMethod();
+        }
     }
 
     void DragAndDropMethod()

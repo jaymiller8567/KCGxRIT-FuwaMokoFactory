@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CreatureScript : MonoBehaviour
 {
+    private GameManager gameManager;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private BoxCollider2D boxCollider;
     [SerializeField] private SpriteRenderer spriteRenderer;
@@ -12,8 +13,6 @@ public class CreatureScript : MonoBehaviour
 
     [SerializeField] private List<Sprite> sprites = new List<Sprite>();
     [SerializeField] private List<Color> colors = new List<Color>();
-
-    private GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
