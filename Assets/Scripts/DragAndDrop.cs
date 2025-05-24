@@ -76,6 +76,9 @@ public class DragAndDrop : MonoBehaviour
             {
                 isDraggable = false;
                 isDragging = false;
+
+                // ADDED BY HENRY
+                transform.position = new Vector3(0, Mathf.Clamp(transform.position.y, -1, 10), 0);
             }
         }
     }

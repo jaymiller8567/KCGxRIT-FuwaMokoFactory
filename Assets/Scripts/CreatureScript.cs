@@ -20,9 +20,9 @@ public class CreatureScript : MonoBehaviour
     void Update()
     {
         if (!gameManager.isPaused) { 
-            if (transform.position.y > -1)
+            if (transform.position.y > -1.5)
             {
-                transform.position += velocity;
+                transform.position += velocity * Time.deltaTime;
             }
             else
             {
