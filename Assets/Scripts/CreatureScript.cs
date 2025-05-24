@@ -17,6 +17,10 @@ public class CreatureScript : MonoBehaviour
 
     [SerializeField] private List<Sprite> sprites = new List<Sprite>();
     [SerializeField] private List<Color> colors = new List<Color>();
+    [SerializeField] private List<Sprite> rainbowSprites = new List<Sprite>();
+
+    private int spriteIndex;
+    private int colorIndex;
 
     public bool IsCollected { get { return isCollected; } set { isCollected = value; } }
 
@@ -30,10 +34,17 @@ public class CreatureScript : MonoBehaviour
         gameManager = Object.FindObjectsOfType<GameManager>()[0];
 
         // Set random color and sprite
-        spriteRenderer.color = colors[Random.Range(0, colors.Count)];
-        spriteRenderer.sprite = sprites[Random.Range(0, sprites.Count)];
+        colorIndex = Random.Range(0, colors.Count);
+        spriteRenderer.color = colors[colorIndex];
+        spriteIndex = Random.Range(0, sprites.Count);
+        spriteRenderer.sprite = sprites[spriteIndex];
 
-        // TODO: add small chance for sprite to be rainbow and color changing (3% chance as requested)
+        // Small chance for sprite to be rainbow and color changing (3% chance as requested)
+        if (Random.value < 0.03f)
+        {
+            spriteRenderer.color = Color.white;
+            spriteRenderer.sprite = sprites[spriteIndex];
+        }
     }
 
     // Update is called once per frame

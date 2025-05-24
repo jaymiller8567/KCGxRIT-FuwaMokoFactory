@@ -110,6 +110,7 @@ MonoBehaviour:
   sprites:
   - {fileID: 21300000, guid: 2df1639b979e376448ec6d481731edfc, type: 3}
   - {fileID: 21300000, guid: faf1b88dc99abb04bbaa540ea03d3e7e, type: 3}
+  - {fileID: 21300000, guid: 540ffc286d650674bb038cf2dd8db65e, type: 3}
   colors:
   - {r: 0.74509805, g: 0.7882353, b: 0.9647059, a: 1}
   - {r: 0.72156864, g: 0.8980392, b: 0.8745098, a: 1}
@@ -117,6 +118,9 @@ MonoBehaviour:
   - {r: 0.94509804, g: 0.92156863, b: 0.7372549, a: 1}
   - {r: 0.9411765, g: 0.85490197, b: 0.7294118, a: 1}
   - {r: 0.9607843, g: 0.85882354, b: 0.8627451, a: 1}
+  rainbowSprites:
+  - {fileID: 21300000, guid: ef9297f0011b94549b0984607fec999d, type: 3}
+  - {fileID: 21300000, guid: 8b7d4f13a4bea334cbca192e3509ef07, type: 3}
 --- !u!50 &7054262547107175662
 Rigidbody2D:
   serializedVersion: 4
