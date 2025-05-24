@@ -79,7 +79,7 @@ public class BoxScript : MonoBehaviour
     {
 		if (!spawnNextBoxOnce)
 		{
-			GetComponent<Rigidbody2D>().velocity += new Vector2(0, -40);
+			GetComponent<Rigidbody2D>().velocity += new Vector2(boxNumber == 1 ? 40 : -40, 0);
 			
 			if(boxNumber==1)
 				boxManager.GetComponent<BoxManager>().SpawnBox1();
