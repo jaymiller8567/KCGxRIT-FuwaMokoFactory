@@ -51,10 +51,23 @@ public class CreatureScript : MonoBehaviour
         // Get game manager
         gameManager = Object.FindObjectsOfType<GameManager>()[0];
 
-        // Set random color and sprite
+        // Set random color
         colorIndex = Random.Range(0, colors.Count);
         spriteRenderer.color = colors[colorIndex];
-        spriteIndex = Random.Range(0, sprites.Count);
+
+        // Weighted random sprite
+        switch (Random.value)
+        {
+            case < 0.4f:
+                spriteIndex = 0;
+                break;
+            case < 0.8f:
+                spriteIndex = 1;
+                break;
+            default:
+                spriteIndex = 2;
+                break;
+        }
         spriteRenderer.sprite = sprites[spriteIndex];
 
         // Small chance for sprite to be rainbow(3% chance)
