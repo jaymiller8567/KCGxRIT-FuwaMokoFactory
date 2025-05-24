@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SubsystemsImplementation;
 
 public class CreatureScript : MonoBehaviour
 {
@@ -26,6 +27,8 @@ public class CreatureScript : MonoBehaviour
         // Set random color and sprite
         spriteRenderer.color = colors[Random.Range(0, colors.Count)];
         spriteRenderer.sprite = sprites[Random.Range(0, sprites.Count)];
+
+        // TODO: add small chance for sprite to be rainbow and color changing (3% chance as requested)
     }
 
     // Update is called once per frame
@@ -34,11 +37,22 @@ public class CreatureScript : MonoBehaviour
         if (!gameManager.isPaused)
         { 
             transform.position += velocity * Time.deltaTime;
+
+            CheckToBeRemoved();
         }
     }
 
     public void AddSpeed(float addVelocity)
     {
         velocity.y += addVelocity;
+    }
+
+    private void CheckToBeRemoved()
+    {
+        // Destroy creature if set to inactive
+        if (transform.position.y < -7.0f)
+        {
+            gameObject.SetActive(false);
+        }
     }
 }

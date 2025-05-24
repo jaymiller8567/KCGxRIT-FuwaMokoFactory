@@ -5,17 +5,15 @@ using UnityEngine;
 public class CreatureManagerScript : MonoBehaviour
 {
 	[SerializeField] private GameObject creaturePrefab;
-
 	[SerializeField] private GameManager gameManager;
 
-
 	[SerializeField, Tooltip("second * 60fps")] private int[] spawnIntervalTimeArray;
-
-
 	[SerializeField, Tooltip("creatureSpeedUp")] private int speedCreatureUp;
 	[SerializeField, Tooltip("second * 60fps")] private int speedUpIntervalTime;
 	private int speedUpLevel;
 	private int frame;
+
+	[SerializeField] private float destroyPosition = -7.0f;
 
 	private List<GameObject> creatureList = new List<GameObject>();
 
@@ -54,6 +52,16 @@ public class CreatureManagerScript : MonoBehaviour
 				{
 					++speedUpLevel;
 					Debug.Log("Speed Up");
+				}
+			}
+
+			// Destroy creatures if they are inactive
+			for (int i = 0; i < creatureList.Count; ++i)
+			{
+				if (!creatureList[i].activeInHierarchy)
+				{
+					Destroy(creatureList[i]);
+					creatureList.RemoveAt(i);
 				}
 			}
 		}
