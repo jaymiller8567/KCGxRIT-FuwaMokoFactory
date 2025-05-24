@@ -740,7 +740,7 @@ MonoBehaviour:
   spawnIntervalTimeArray: b4000000780000003c000000
   speedCreatureUp: 0
   speedUpIntervalTime: 1800
-  destroyPosition: -7
+  destroyPosition: -10
 --- !u!1 &1163584276
 GameObject:
   m_ObjectHideFlags: 0
