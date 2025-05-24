@@ -8,7 +8,7 @@ public class CreatureManagerScript : MonoBehaviour
 	[SerializeField] private GameManager gameManager;
 
 	[SerializeField, Tooltip("second * 60fps")] private int[] spawnIntervalTimeArray;
-	[SerializeField, Tooltip("creatureSpeedUp")] private int speedCreatureUp;
+	[SerializeField, Tooltip("creatureSpeedUp")] private float speedCreatureUp;
 	[SerializeField, Tooltip("second * 60fps")] private int speedUpIntervalTime;
 	private int speedUpLevel;
 	private int frame;
@@ -40,24 +40,32 @@ public class CreatureManagerScript : MonoBehaviour
 		{
 			++frame;
 
-			//spawn Creature
-			if (frame % spawnIntervalTimeArray[speedUpLevel] == 0)
-			{
-				CreateCreature();
-			}
-
 			if (frame % speedUpIntervalTime == 0)
 			{
 				if (spawnIntervalTimeArray.Length != speedUpLevel + 1)
 				{
 					++speedUpLevel;
 					Debug.Log("Speed Up");
+
+					// Speed up existing creatures
+					foreach (var creature in creatureList)
+					{
+                        creature.GetComponent<CreatureScript>().AddSpeed(speedCreatureUp * speedUpLevel);
+                    }
 				}
 			}
 
-			// Destroy creatures if they are inactive
-			for (int i = 0; i < creatureList.Count; ++i)
+            //spawn Creature
+            if (frame % spawnIntervalTimeArray[speedUpLevel] == 0)
+            {
+                CreateCreature();
+            }
+
+            // Destroy creatures if they are inactive
+            for (int i = 0; i < creatureList.Count; ++i)
 			{
+				if (creatureList[i] == null) return;
+
 				if (!creatureList[i].activeInHierarchy)
 				{
 					Destroy(creatureList[i]);

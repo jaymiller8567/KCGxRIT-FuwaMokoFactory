@@ -23,14 +23,14 @@ public class BoxManager : MonoBehaviour
 
     public void SpawnBox1()
     {
-        var box1=Instantiate(box, spawn1,this.transform.rotation);
+        var box1=Instantiate(box, new Vector3(spawn1.x,10,0),this.transform.rotation);
         box1.GetComponent<BoxScript>().boxNumber = 1;
         box1.GetComponent<BoxScript>().boxManager = this.gameObject;
     }
 
     public void SpawnBox2()
     {
-        var box2=Instantiate(box, spawn2, this.transform.rotation);
+        var box2=Instantiate(box, new Vector3(spawn2.x, 10, 0), this.transform.rotation);
         box2.GetComponent<BoxScript>().boxNumber = 2;
         box2.GetComponent<BoxScript>().boxManager = this.gameObject;
     }
