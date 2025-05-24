@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/tiger employee _ hurt2.png.meta
 guid: 8d56907874aa2294e89510c94dabe0ae
+========
+guid: 72e1e7c290bcb79438f4a7f1c78ed498
+>>>>>>>> 266e9d9ad1c2390b6c1e1b4581db52b34cbf082c:Assets/tiger employee _ angry2.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
