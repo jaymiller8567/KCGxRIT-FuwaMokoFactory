@@ -36,9 +36,11 @@ public class CreatureScript : MonoBehaviour
                 case 2:
                     return "toge";
                 default:
-                    return "INVALID";
+                    return "NO TYPE SPECIFIED";
             }
-        } }
+        } 
+    }
+    public bool IsRainbow { get { return isRainbow; } }
 
     // Start is called before the first frame update
     void Start()
