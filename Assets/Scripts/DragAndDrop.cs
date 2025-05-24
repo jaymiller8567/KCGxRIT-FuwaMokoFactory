@@ -20,6 +20,8 @@ public class DragAndDrop : MonoBehaviour
     private Collider2D objectCollider;
 
     private GameManager gameManager;
+    [SerializeField] private CreatureManagerScript creatureManagerScript;
+    private float storedYPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -69,6 +71,9 @@ public class DragAndDrop : MonoBehaviour
                 {
                     // If it's currently draggable and the mouse is clicked, it's being dragged
                     isDragging = true;
+
+                    // Store y position to return to
+                    storedYPosition = transform.position.y;
                 }
             }
             // If it's currently dragging
@@ -77,13 +82,22 @@ public class DragAndDrop : MonoBehaviour
                 // Change the position of the object
                 Vector3 positionForItem = new Vector3(mousePosition.x, mousePosition.y, -1);
                 this.transform.position = positionForItem;
+
+                storedYPosition += creatureManagerScript.CreatureVelocity;
             }
 
             // Once you let go, reset the isDraggable and isDragging booleans.
             if (Input.GetMouseButtonUp(0))
             {
+                // ADDED BY HENRY: return to last position if not collected
+                if (isDragging)
+                {
+                    transform.position = new Vector3(0, storedYPosition, 0);
+                }
+
                 isDraggable = false;
                 isDragging = false;
+<<<<<<< Updated upstream
 
                 //ADDED BY YUU
                 if (GetComponent<CreatureScript>().inBox != null)
@@ -95,6 +109,8 @@ public class DragAndDrop : MonoBehaviour
 
                 // ADDED BY HENRY
                 transform.position = new Vector3(0, Mathf.Clamp(transform.position.y, -1, 10), 0);
+=======
+>>>>>>> Stashed changes
             }
         }
     }
