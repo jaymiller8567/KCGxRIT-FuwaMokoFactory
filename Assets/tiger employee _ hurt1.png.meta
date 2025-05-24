@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Art/Box/sprites/fuwa-box.png.meta
-guid: 0692b430fc6cfee478cc661d55c82b37
-========
-guid: 5a7ab633c0eb25e48a0e44a38a4ad9fd
->>>>>>>> 266e9d9ad1c2390b6c1e1b4581db52b34cbf082c:Assets/tiger employee _ angry1.png.meta
+guid: f05ea8fd5690ac24386e3e9336f4165b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -99,19 +95,6 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
