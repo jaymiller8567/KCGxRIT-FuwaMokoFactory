@@ -137,8 +137,15 @@ public class BoxScript : MonoBehaviour
         Destroy(hitCreature.GetComponent<DragAndDrop>());
 		inCreatureArray.Add(hitCreature);
 
-		hitCreature = null;
+        if (hitCreature.GetComponent<CreatureScript>().IsRainbow)
+        {
+            ScoreScript.instance.addToScore(true);
+        }
+		else {
+            ScoreScript.instance.addToScore(false);
+        }
 
+        hitCreature = null;
 
 		Num();
 	}

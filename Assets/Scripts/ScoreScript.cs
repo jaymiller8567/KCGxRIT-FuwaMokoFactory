@@ -1,0 +1,80 @@
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+
+public class ScoreScript : MonoBehaviour
+{
+    // Start is called before the first frame update
+
+    private float currentScore = 0;
+    private int currentCombo = 0;
+    private float currentMultiplier = 1;
+
+
+    private float maxMultiplier = 2.5f;
+    private List<int> comboLevels;
+
+    private int numSorted;
+    private int totalScore;
+
+    private static ScoreScript _instance;
+
+
+    // UI
+    public GameObject comboText;
+    public GameObject currentScoreText;
+    public GameObject currentMultiplierText;
+
+
+    public static ScoreScript instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = GameObject.FindObjectOfType<ScoreScript>();
+            }
+
+            return _instance;
+        }
+    }
+
+
+    void Start()
+    {
+
+    }
+
+    void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        comboText.GetComponent<TextMeshProUGUI>().text = "COMBO: " + currentCombo.ToString();
+        currentScoreText.GetComponent<TextMeshProUGUI>().text = "SCORE: " + currentScore.ToString();
+        currentMultiplierText.GetComponent<TextMeshProUGUI>().text = "MULTIPLIER: " + currentMultiplier.ToString() + "x";
+    }
+
+    public void addToScore(bool isRainbow)
+    {
+        if (isRainbow == true)
+        {
+            currentScore += 600 * currentMultiplier;
+        }
+        else
+        {
+            currentScore += 200 * currentMultiplier;
+        }
+        currentCombo++;
+        Debug.Log("Current Combo: " +  currentCombo);
+
+        if (currentCombo % 5 == 0 && currentCombo != 0)
+        {
+            currentMultiplier += 0.3f;
+        }
+    }
+}
