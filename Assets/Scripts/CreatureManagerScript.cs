@@ -35,7 +35,7 @@ public class CreatureManagerScript : MonoBehaviour
 	void Update()
 	{
 		//pause
-		if (gameManager.GetComponent<GameManager>().isPaused) return;
+		//if (gameManager.GetComponent<GameManager>().isPaused) return;
 
 		if (!gameManager.isPaused)
 		{
