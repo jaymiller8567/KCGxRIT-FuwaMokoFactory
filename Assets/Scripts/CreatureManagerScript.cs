@@ -40,23 +40,29 @@ public class CreatureManagerScript : MonoBehaviour
 		{
 			++frame;
 
-			//spawn Creature
-			if (frame % spawnIntervalTimeArray[speedUpLevel] == 0)
-			{
-				CreateCreature();
-			}
-
 			if (frame % speedUpIntervalTime == 0)
 			{
 				if (spawnIntervalTimeArray.Length != speedUpLevel + 1)
 				{
 					++speedUpLevel;
 					Debug.Log("Speed Up");
+
+					// Speed up existing creatures
+					foreach (var creature in creatureList)
+					{
+                        creature.GetComponent<CreatureScript>().AddSpeed(speedCreatureUp * speedUpLevel);
+                    }
 				}
 			}
 
-			// Destroy creatures if they are inactive
-			for (int i = 0; i < creatureList.Count; ++i)
+            //spawn Creature
+            if (frame % spawnIntervalTimeArray[speedUpLevel] == 0)
+            {
+                CreateCreature();
+            }
+
+            // Destroy creatures if they are inactive
+            for (int i = 0; i < creatureList.Count; ++i)
 			{
 				if (creatureList[i] == null) return;
 
