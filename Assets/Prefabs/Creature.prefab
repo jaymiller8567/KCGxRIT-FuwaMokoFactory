@@ -105,7 +105,7 @@ MonoBehaviour:
   boxCollider: {fileID: 4951608101455942529}
   spriteRenderer: {fileID: 202471373534144715}
   startPosition: {x: 0, y: 7}
-  velocity: {x: 0, y: -1, z: 0}
+  velocity: {x: 0, y: -1.5, z: 0}
   inBox: {fileID: 0}
   sprites:
   - {fileID: 21300000, guid: 2df1639b979e376448ec6d481731edfc, type: 3}
