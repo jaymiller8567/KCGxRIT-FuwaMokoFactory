@@ -6,7 +6,7 @@ public class CreatureManagerScript : MonoBehaviour
 {
 	[SerializeField] private GameObject creaturePrefab;
 
-	[SerializeField] private GameObject gameManager;
+	[SerializeField] private GameManager gameManager;
 
 
 	[SerializeField, Tooltip("second")] private int[] spawnIntervalTimeArray;
@@ -19,8 +19,11 @@ public class CreatureManagerScript : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
-		//setting 60 fps
-		QualitySettings.vSyncCount = 0;
+        // Get game manager
+        gameManager = Object.FindObjectsOfType<GameManager>()[0];
+
+        //setting 60 fps
+        QualitySettings.vSyncCount = 0;
 		Application.targetFrameRate = 60;
 
 
@@ -34,22 +37,24 @@ public class CreatureManagerScript : MonoBehaviour
 		//pause
 		if (gameManager.GetComponent<GameManager>().isPaused) return;
 
-		++frame;
+		if (!gameManager.isPaused)
+		{
+			++frame;
 
-		//spawn Creature
-		if (frame % spawnIntervalTimeArray[speedUpLevel] == 0) 
-        {
-			CreateCreature();
-        }
-
-		if (frame % speedUpIntervalTime == 0)
-        {
-			if (spawnIntervalTimeArray.Length != speedUpLevel + 1)
-            {
-				++speedUpLevel;
-				Debug.Log("Speed Up");
+			//spawn Creature
+			if (frame % spawnIntervalTimeArray[speedUpLevel] == 0)
+			{
+				CreateCreature();
 			}
-				
+
+			if (frame % speedUpIntervalTime == 0)
+			{
+				if (spawnIntervalTimeArray.Length != speedUpLevel + 1)
+				{
+					++speedUpLevel;
+					Debug.Log("Speed Up");
+				}
+			}
 		}
 	}
 
