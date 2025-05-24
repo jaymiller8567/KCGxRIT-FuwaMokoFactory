@@ -99,6 +99,7 @@ public class DragAndDrop : MonoBehaviour
                 isDragging = false;
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
                 //ADDED BY YUU
                 if (GetComponent<CreatureScript>().inBox != null)
@@ -110,6 +111,8 @@ public class DragAndDrop : MonoBehaviour
 
                 // ADDED BY HENRY
                 transform.position = new Vector3(0, Mathf.Clamp(transform.position.y, -1, 10), 0);
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
