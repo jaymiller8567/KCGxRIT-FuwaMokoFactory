@@ -8,7 +8,7 @@ public class CreatureManagerScript : MonoBehaviour
 	[SerializeField] private GameManager gameManager;
 
 	[SerializeField, Tooltip("second * 60fps")] private int[] spawnIntervalTimeArray;
-	[SerializeField, Tooltip("creatureSpeedUp")] private float speedCreatureUp;
+	[SerializeField, Tooltip("creatureSpeedUp")] private int speedCreatureUp;
 	[SerializeField, Tooltip("second * 60fps")] private int speedUpIntervalTime;
 	private int speedUpLevel;
 	private int frame;
