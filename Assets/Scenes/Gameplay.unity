@@ -735,7 +735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67053d0c7fa6d1a4eb43b2825b058fe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  creaturePrefab: {fileID: 0}
+  creaturePrefab: {fileID: 2231380602085275401, guid: 1824d8be09f796949ba67fac63b6fa84, type: 3}
 --- !u!1 &1163584276
 GameObject:
   m_ObjectHideFlags: 0
@@ -1277,6 +1277,10 @@ PrefabInstance:
     - target: {fileID: 2231380602085275401, guid: 1824d8be09f796949ba67fac63b6fa84, type: 3}
       propertyPath: m_Name
       value: Creature
+      objectReference: {fileID: 0}
+    - target: {fileID: 2231380602085275401, guid: 1824d8be09f796949ba67fac63b6fa84, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2337116431994051418, guid: 1824d8be09f796949ba67fac63b6fa84, type: 3}
       propertyPath: m_LocalPosition.x
