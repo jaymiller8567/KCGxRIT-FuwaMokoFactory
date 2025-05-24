@@ -54,11 +54,17 @@ public class ScoreScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        // Set Text
         comboText.GetComponent<TextMeshProUGUI>().text = "COMBO: " + currentCombo.ToString();
         currentScoreText.GetComponent<TextMeshProUGUI>().text = "SCORE: " + currentScore.ToString();
         currentMultiplierText.GetComponent<TextMeshProUGUI>().text = "MULTIPLIER: " + currentMultiplier.ToString() + "x";
     }
 
+    /// <summary>
+    /// Called when the player successfully sorts a fuzzy. 
+    /// </summary>
+    /// <param name="isRainbow"></param>
     public void addToScore(bool isRainbow)
     {
         if (isRainbow == true)
@@ -76,5 +82,14 @@ public class ScoreScript : MonoBehaviour
         {
             currentMultiplier += 0.3f;
         }
+    }
+
+    /// <summary>
+    /// Called when either a fuzzy is missed, incorrectly sorted, or a spiky is touched.
+    /// </summary>
+    public void breakCombo()
+    {
+        currentMultiplier = 1;
+        currentCombo = 0;
     }
 }
