@@ -20,6 +20,7 @@ public class DragAndDrop : MonoBehaviour
     private Collider2D objectCollider;
 
     private GameManager gameManager;
+    private float lastYPos;
 
     // Start is called before the first frame update
     void Start()
@@ -69,6 +70,8 @@ public class DragAndDrop : MonoBehaviour
                 {
                     // If it's currently draggable and the mouse is clicked, it's being dragged
                     isDragging = true;
+
+                    lastYPos = transform.position.y;
                 }
             }
             // If it's currently dragging
@@ -82,19 +85,20 @@ public class DragAndDrop : MonoBehaviour
             // Once you let go, reset the isDraggable and isDragging booleans.
             if (Input.GetMouseButtonUp(0))
             {
-                isDraggable = false;
-                isDragging = false;
-
                 //ADDED BY YUU
                 if (GetComponent<CreatureScript>().inBox != null)
                 {
                     GetComponent<CreatureScript>().inBox.GetComponent<BoxScript>().InCreatureBox();
                     return;
                 }
-                   
+                // ADDED BY HENRY: if dragged not on a box, return to last position
+                else if (isDragging)
+                {
+                    transform.position = new Vector3(0, lastYPos, 0);
+                }
 
-                // ADDED BY HENRY
-                transform.position = new Vector3(0, Mathf.Clamp(transform.position.y, -1, 10), 0);
+                isDraggable = false;
+                isDragging = false;
             }
         }
     }
