@@ -15,11 +15,11 @@ public class ConveyorBeltLoop : MonoBehaviour
 
 	private void Start()
 	{
-		var image = GetComponent<Image>();
-		m_copiedMaterial = image.material;
+		//var image = GetComponent<Image>();
+		//m_copiedMaterial = image.material;
 
-		// マテリアルがnullだったら例外が出ます。
-		Assert.IsNotNull(m_copiedMaterial);
+		//// マテリアルがnullだったら例外が出ます。
+		//Assert.IsNotNull(m_copiedMaterial);
 	}
 
 	private void Update()
@@ -33,7 +33,7 @@ public class ConveyorBeltLoop : MonoBehaviour
 		var x = Mathf.Repeat(Time.time * m_offsetSpeed.x, k_maxLength);
 		var y = Mathf.Repeat(Time.time * m_offsetSpeed.y, k_maxLength);
 		var offset = new Vector2(x, y);
-		m_copiedMaterial.SetTextureOffset(k_propName, offset);
+		GetComponent<Image>().material.SetTextureOffset(k_propName, offset);
 	}
 
 	private void OnDestroy()
