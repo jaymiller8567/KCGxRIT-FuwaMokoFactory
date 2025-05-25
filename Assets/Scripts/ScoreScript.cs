@@ -10,7 +10,7 @@ public class ScoreScript : MonoBehaviour
     private float currentScore = 0;
     private int currentCombo = 0;
     private float currentMultiplier = 1;
-
+    private float numberMissed = 0;
 
     private float maxMultiplier = 2.5f;
     private List<int> comboLevels;
@@ -54,7 +54,6 @@ public class ScoreScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         // Set Text
         comboText.GetComponent<TextMeshProUGUI>().text = "COMBO: " + currentCombo.ToString();
         currentScoreText.GetComponent<TextMeshProUGUI>().text = "SCORE: " + currentScore.ToString();
@@ -91,5 +90,6 @@ public class ScoreScript : MonoBehaviour
     {
         currentMultiplier = 1;
         currentCombo = 0;
+        numberMissed++;
     }
 }

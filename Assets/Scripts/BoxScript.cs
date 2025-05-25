@@ -137,13 +137,15 @@ public class BoxScript : MonoBehaviour
         Destroy(hitCreature.GetComponent<DragAndDrop>());
 		inCreatureArray.Add(hitCreature);
 
-        if (hitCreature.GetComponent<CreatureScript>().IsRainbow)
+        if (hitCreature.GetComponent<CreatureScript>().IsRainbow) 
         {
             ScoreScript.instance.addToScore(true);
         }
-		else {
+		else if (!hitCreature.GetComponent<CreatureScript>().IsRainbow){
             ScoreScript.instance.addToScore(false);
         }
+
+		// If it's spiky?
 
         hitCreature = null;
 
