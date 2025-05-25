@@ -42,6 +42,7 @@ public class TigerAnimationHandler : MonoBehaviour
     {
         leftTiger.GetComponent<Animator>().Play(painAnimName);
         rightTiger.GetComponent<Animator>().Play(angryAnimName);
+        Debug.Log("playing left pain anim");
 
     }
 
@@ -49,5 +50,7 @@ public class TigerAnimationHandler : MonoBehaviour
     {
         rightTiger.GetComponent<Animator>().Play(painAnimName);
         leftTiger.GetComponent<Animator>().Play(angryAnimName);
+        Debug.Log("playing right pain anim");
+
     }
 }

@@ -59,9 +59,9 @@ public class ScoreScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentMultiplierText.GetComponent<TextMeshProUGUI>().text = currentMultiplier.ToString() + "x";
-        comboText.GetComponent<TextMeshProUGUI>().text = currentCombo.ToString();
-        currentScoreText.GetComponent<TextMeshProUGUI>().text = currentScore.ToString();
+        currentMultiplierText.GetComponent<TextMeshProUGUI>().text = "MULTIPLIER: " + currentMultiplier.ToString() + "x";
+        comboText.GetComponent<TextMeshProUGUI>().text = "COMBO: " + currentCombo.ToString();
+        currentScoreText.GetComponent<TextMeshProUGUI>().text = "SCORE: " + currentScore.ToString();
 
     }
 
