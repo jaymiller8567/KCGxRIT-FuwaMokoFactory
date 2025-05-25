@@ -15,7 +15,7 @@ public class CanvasSwitch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.anyKeyDown&& canvas[0].activeSelf==true)
+        if (Input.anyKeyDown)
         {
             canvas[0].SetActive(false);
             canvas[1 ].SetActive(true);
