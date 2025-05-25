@@ -11,6 +11,9 @@ public class DataManager : MonoBehaviour
     // 開始時にファイルチェック、読み込み
     void Awake()
     {
+        //setting 60 fps
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 60;
         // パス名取得
         filepath = Application.dataPath + "/" + fileName ;
 
