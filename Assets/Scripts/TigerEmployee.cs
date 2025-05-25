@@ -15,11 +15,12 @@ public class TigerEmployee : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePos.z = 0;
 
-        rotation = Quaternion.Angle(transform.position, mousePos);
-            
-            //Mathf.Atan2(mousePos.x - transform.position.x, mousePos.y - transform.position.y);
+        float angle = Mathf.Atan2(transform.position.y - mousePos.y, transform.position.x - mousePos.x);
+        rotation = Quaternion.LookRotation(new Vector3(0, 0, 1), mousePos - transform.position);
+        
         transform.rotation = rotation;
     }
 }
