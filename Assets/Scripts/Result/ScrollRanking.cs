@@ -32,14 +32,17 @@ public class ScrollRanking : MonoBehaviour
     {
         if (Input.GetMouseButtonUp(0))
         {
+            //マウスのClickが解除されたら初期化
             m_mouseOldPointY = 0.0f;
         }
         else if (Input.GetMouseButtonDown(0))
         {
+            //初めにマウスを押したときだけ同じにする
             m_mouseOldPointY = m_mousePointY = Input.mousePosition.y; 
         }
         if (m_isEnd == false)
         {
+            //指定した位置まで落下する
             if (this.gameObject.transform.position.y > m_stopTransform[0].position.y)
             {
                 m_vec.y -= m_down;
@@ -50,6 +53,7 @@ public class ScrollRanking : MonoBehaviour
                 m_isEnd = true;
             }
         }
+        //マウスがClickされているなら前の位置と比べて上下の移動の値を出す
         else if(Input.GetMouseButton(0))
         {
 
@@ -65,6 +69,7 @@ public class ScrollRanking : MonoBehaviour
             m_mousePointY = 0.0f;
         }
 
+        //指定した位置の間でしか移動できない
         if (m_isEnd == true)
         {
             if (m_vec.y < m_stopTransform[0].position.y)
@@ -77,6 +82,7 @@ public class ScrollRanking : MonoBehaviour
                 m_vec.y = m_stopTransform[1].position.y;
             }
         }
+        //移動
         this.gameObject.transform.position = m_vec;
     }
 }
