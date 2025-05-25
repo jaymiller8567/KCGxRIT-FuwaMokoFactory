@@ -16,6 +16,7 @@ public class BoxScript : MonoBehaviour
 	private bool start = true;
 	[HideInInspector] public GameObject boxManager;
 	[HideInInspector] public int boxNumber;
+	[SerializeField] private AudioClip inBox;
 
 	// Start is called before the first frame update
 	void Start()
@@ -147,6 +148,14 @@ public class BoxScript : MonoBehaviour
 		{
 			ScoreScript.instance.addToScore(hitCreature.GetComponent<CreatureScript>().IsRainbow);
 		}
+		else if (hitCreature.GetComponent<CreatureScript>().Type == "fuwa" && boxNumber == 1)
+		{
+			TigerAnimationHandler.instance.rightPain();
+		}
+        else if (hitCreature.GetComponent<CreatureScript>().Type == "moco" && boxNumber == 2)
+        {
+            TigerAnimationHandler.instance.leftPain();
+        }
 		else
 		{
 			//different kind
@@ -177,5 +186,7 @@ public class BoxScript : MonoBehaviour
 
 		//initialize
 		hitCreature = null;
+
+		GetComponent<AudioSource>().PlayOneShot(inBox);
 	}
 }
