@@ -207,6 +207,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDragging: 0
   isLocked: 0
+  audioCatch: {fileID: 8300000, guid: 157d39620db5ab14f90b19eb3e956c73, type: 3}
+  audioRelease: {fileID: 8300000, guid: 7d2714f8b230f8242b02d69c7fe0f1a8, type: 3}
 --- !u!61 &1137824231047117046
 BoxCollider2D:
   m_ObjectHideFlags: 0

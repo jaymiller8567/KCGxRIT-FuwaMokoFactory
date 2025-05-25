@@ -22,6 +22,9 @@ public class DragAndDrop : MonoBehaviour
     private GameManager gameManager;
     private float lastYPos;
 
+    public AudioClip audioCatch;
+    public AudioClip audioRelease;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -72,6 +75,9 @@ public class DragAndDrop : MonoBehaviour
                     isDragging = true;
 
                     lastYPos = transform.position.y;
+
+                    GetComponent<AudioSource>().PlayOneShot(audioCatch);
+
                 }
             }
             // If it's currently dragging
@@ -99,6 +105,8 @@ public class DragAndDrop : MonoBehaviour
 
                 isDraggable = false;
                 isDragging = false;
+
+                GetComponent<AudioSource>().PlayOneShot(audioRelease);
             }
         }
     }
