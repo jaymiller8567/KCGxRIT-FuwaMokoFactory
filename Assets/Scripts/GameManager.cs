@@ -42,7 +42,10 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        timerText.GetComponent<TextMeshProUGUI>().text = timeLeft.ToString("F0");
+        if (timerText != null)
+        {
+            timerText.GetComponent<TextMeshProUGUI>().text = timeLeft.ToString("F0");
+        }
     }
 
     void PauseGame()
