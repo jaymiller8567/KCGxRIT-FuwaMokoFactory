@@ -18,7 +18,6 @@ public class GameManager : MonoBehaviour
     {
         pauseMenu.enabled = false;
         gameUI.enabled = true;
-
         GetComponent<AudioSource>().PlayOneShot(startAudio);
     }
 
