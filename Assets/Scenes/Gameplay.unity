@@ -1501,6 +1501,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 2141697948}
   isPaused: 0
+  scoreText: {fileID: 0}
 --- !u!4 &1681660234
 Transform:
   m_ObjectHideFlags: 0
@@ -2207,8 +2208,9 @@ SceneRoots:
   m_Roots:
   - {fileID: 272454043}
   - {fileID: 2434781777066790723}
-  - {fileID: 2141697949}
   - {fileID: 900568405}
+  - {fileID: 2141697949}
+  - {fileID: 1128246998}
   - {fileID: 1681660234}
   - {fileID: 1091270807}
   - {fileID: 1581089496}
