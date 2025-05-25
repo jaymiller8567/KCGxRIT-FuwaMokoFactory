@@ -954,7 +954,7 @@ Transform:
   m_GameObject: {fileID: 889088058}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5, y: -3, z: 0}
+  m_LocalPosition: {x: -5.75, y: -3, z: 0}
   m_LocalScale: {x: 0.53, y: 0.53, z: 0.53}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1203,7 +1203,7 @@ Transform:
   m_GameObject: {fileID: 1086039637}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: -3, z: 0}
+  m_LocalPosition: {x: 5.9, y: -3, z: 0}
   m_LocalScale: {x: 0.53, y: 0.53, z: 0.53}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1267,8 +1267,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   creaturePrefab: {fileID: 2231380602085275401, guid: 1824d8be09f796949ba67fac63b6fa84, type: 3}
   gameManager: {fileID: 1681660233}
-  spawnIntervalTimeArray: 640000003c00000028000000
-  speedCreatureUp: -1.2
+  spawnIntervalTimeArray: 5a0000003c00000028000000
+  speedCreatureUp: -1.3
   speedUpIntervalTime: 1800
   destroyPosition: -10
 --- !u!1 &1128246994
@@ -2086,8 +2086,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   box: {fileID: 2074243002825168931, guid: 089c6e9dfde1fd641929f2f3929dfbb4, type: 3}
-  spawn1: {x: 5, y: 0, z: 0}
-  spawn2: {x: -5, y: 0, z: 0}
+  spawn1: {x: 5.8, y: 0, z: 0}
+  spawn2: {x: -5.8, y: 0, z: 0}
   mokoSprite: {fileID: 21300000, guid: 6420f5622336dc546b6e779e19fa1734, type: 3}
   fuwaSprite: {fileID: 21300000, guid: 5212be4b173f62a4387c0d1e916916b5, type: 3}
 --- !u!4 &1581089496

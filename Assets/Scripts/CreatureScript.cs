@@ -62,10 +62,10 @@ public class CreatureScript : MonoBehaviour
         // Weighted random sprite
         switch (Random.value)
         {
-            case < 0.4f:
+            case < 0.45f:
                 spriteIndex = 0;
                 break;
-            case < 0.8f:
+            case < 0.9f:
                 spriteIndex = 1;
                 break;
             default:
