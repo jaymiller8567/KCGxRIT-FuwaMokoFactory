@@ -32,10 +32,12 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        timeLeft -= Time.deltaTime;
-        if (timeLeft <= 0)
-        {
-            GameOver();
+        if (!isPaused) { 
+            timeLeft -= Time.deltaTime;
+            if (timeLeft <= 0)
+            {
+                GameOver();
+            }
         }
     }
 
@@ -49,7 +51,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Game Paused!");
     }
 
-    void ResumeGame()
+    public void ResumeGame()
     {
         Time.timeScale = 1f;
         pauseMenu.enabled = false;
