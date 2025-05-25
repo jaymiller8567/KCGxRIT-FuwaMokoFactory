@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public Canvas pauseMenu;
@@ -68,5 +68,6 @@ public class GameManager : MonoBehaviour
     {
         // Game is over, proceed to next scene.
         Debug.Log("Time up!");
+        SceneManager.LoadScene("EndScreen");
     }
 }
