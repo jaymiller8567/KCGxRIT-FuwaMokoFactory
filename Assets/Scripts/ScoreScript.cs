@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ScoreScript : MonoBehaviour
 {
@@ -11,14 +13,21 @@ public class ScoreScript : MonoBehaviour
     private int currentCombo = 0;
     private float currentMultiplier = 1;
     private float numberMissed = 0;
+    private int maxCombo = 0;
 
     private float maxMultiplier = 2.5f;
     private List<int> comboLevels;
 
     private int numSorted;
-    private int totalScore;
 
     private static ScoreScript _instance;
+
+    // Properties
+    public float FinalScore { get { return currentScore; } }
+    public int MaxCombo { get { return maxCombo; } }
+
+    public int NumEscaped { get { return numberMissed; } }
+    public int TotalNumberSorted { get { return numSorted; } }
 
 
     // UI
@@ -26,8 +35,7 @@ public class ScoreScript : MonoBehaviour
     public GameObject currentScoreText;
     public GameObject currentMultiplierText;
 
-
-    public static ScoreScript instance
+   public static ScoreScript instance
     {
         get
         {
@@ -54,10 +62,7 @@ public class ScoreScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Set Text
-        comboText.GetComponent<TextMeshProUGUI>().text = "COMBO: " + currentCombo.ToString();
-        currentScoreText.GetComponent<TextMeshProUGUI>().text = "SCORE: " + currentScore.ToString();
-        currentMultiplierText.GetComponent<TextMeshProUGUI>().text = "MULTIPLIER: " + currentMultiplier.ToString() + "x";
+      
     }
 
     /// <summary>
@@ -74,12 +79,20 @@ public class ScoreScript : MonoBehaviour
         {
             currentScore += 200 * currentMultiplier;
         }
+
+        numSorted++;
+
         currentCombo++;
         Debug.Log("Current Combo: " +  currentCombo);
 
         if (currentCombo % 5 == 0 && currentCombo != 0)
         {
             currentMultiplier += 0.3f;
+        }
+
+        if (maxCombo < currentCombo)
+        {
+            maxCombo = currentCombo;
         }
     }
 
