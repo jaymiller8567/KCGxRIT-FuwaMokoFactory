@@ -7,6 +7,8 @@ public class CreatureManagerScript : MonoBehaviour
 {
 	[SerializeField] private GameObject creaturePrefab;
 	[SerializeField] private GameManager gameManager;
+	[SerializeField] private Image speedUpText;
+	private int speedUpTextFrame = 0;
 
 	[SerializeField, Tooltip("second * 60fps")] private int[] spawnIntervalTimeArray;
 	[SerializeField, Tooltip("creatureSpeedUp")] private float speedCreatureUp;
@@ -33,6 +35,8 @@ public class CreatureManagerScript : MonoBehaviour
 
 		CreateCreature();
 		speedUpLevel = frame = 0;
+
+		speedUpText.enabled = false;
 	}
 
 	// Update is called once per frame
@@ -50,6 +54,7 @@ public class CreatureManagerScript : MonoBehaviour
 					++speedUpLevel;
 					GetComponent<AudioSource>().PlayOneShot(speedUpaudio);
 					Debug.Log("Speed Up");
+					speedUpText.enabled = true;
 
 					conveyorBeltImage.GetComponent<ConveyorBeltLoop>().SpeedUp();
 
@@ -61,6 +66,16 @@ public class CreatureManagerScript : MonoBehaviour
                             creature.GetComponent<CreatureScript>().AddSpeed(speedCreatureUp * speedUpLevel);
                         }
                     }
+				}
+			}
+			if (speedUpText.enabled)
+			{
+				speedUpTextFrame += 1;
+
+				if (speedUpTextFrame >= 90)
+				{
+					speedUpText.enabled = false;
+					speedUpTextFrame = 0;
 				}
 			}
 
