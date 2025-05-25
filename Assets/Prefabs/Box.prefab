@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40dc2eba20993d045a0302fc8163c220, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxCreatureNum: 10
+  maxCreatureNum: 5
   closeSprite:
   - {fileID: 21300000, guid: 254df67c3a7e43a429037b444876f05f, type: 3}
   - {fileID: 21300000, guid: 136b03e3d9660194bb7e14a76fe102e7, type: 3}
