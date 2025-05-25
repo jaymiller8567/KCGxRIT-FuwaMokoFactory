@@ -10,13 +10,16 @@ public class GameManager : MonoBehaviour
     public bool isPaused = false;
     public Canvas gameUI;
     public float timeLeft = 90;
-    public GameObject timerText; 
+    public GameObject timerText;
+    public AudioClip startAudio;
 
     // Start is called before the first frame update
     void Start()
     {
         pauseMenu.enabled = false;
         gameUI.enabled = true;
+
+        GetComponent<AudioSource>().PlayOneShot(startAudio);
     }
 
     // Update is called once per frame

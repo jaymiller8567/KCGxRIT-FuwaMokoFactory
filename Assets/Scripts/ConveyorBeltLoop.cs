@@ -15,11 +15,11 @@ public class ConveyorBeltLoop : MonoBehaviour
 
 	private void Start()
 	{
-		var image = GetComponent<Image>();
-		m_copiedMaterial = image.material;
+		//var image = GetComponent<Image>();
+		//m_copiedMaterial = image.material;
 
-		// マテリアルがnullだったら例外が出ます。
-		Assert.IsNotNull(m_copiedMaterial);
+		//// マテリアルがnullだったら例外が出ます。
+		//Assert.IsNotNull(m_copiedMaterial);
 	}
 
 	private void Update()
