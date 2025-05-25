@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 
@@ -7,14 +8,15 @@ public class GameManager : MonoBehaviour
 {
     public Canvas pauseMenu;
     public bool isPaused = false;
-    public Canvas scoreText;
+    public Canvas gameUI;
     public float timeLeft = 90;
+    public GameObject timerText; 
 
     // Start is called before the first frame update
     void Start()
     {
         pauseMenu.enabled = false;
-        scoreText.enabled = true;
+        gameUI.enabled = true;
     }
 
     // Update is called once per frame
@@ -39,13 +41,15 @@ public class GameManager : MonoBehaviour
                 GameOver();
             }
         }
+
+        timerText.GetComponent<TextMeshProUGUI>().text = timeLeft.ToString("F0");
     }
 
     void PauseGame()
     {
        // Time.timeScale = 0f;
         pauseMenu.enabled = true;
-        scoreText.enabled = false;
+        gameUI.enabled = false;
         isPaused = true;
         Time.timeScale = 0f;
         Debug.Log("Game Paused!");
@@ -55,7 +59,7 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         pauseMenu.enabled = false;
-        scoreText.enabled = true;
+        gameUI.enabled = true;
         isPaused = false;
         Debug.Log("Game Resumed!");
     } 
