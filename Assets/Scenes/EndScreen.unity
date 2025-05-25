@@ -2987,6 +2987,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_createObject:
   - {fileID: 5076614911063006419, guid: bbc408933b05fd74db24e476b12e1160, type: 3}
+  - {fileID: 5076614911063006419, guid: aaa67b11845779c4da963655cb90c664, type: 3}
+  - {fileID: 5076614911063006419, guid: 5b40b9ec65476084db5c5f3cea13a80c, type: 3}
+  - {fileID: 5076614911063006419, guid: 700b644840589e64a981bf309857b18a, type: 3}
+  - {fileID: 5076614911063006419, guid: d99aad417e073f34caa5e23e400a2646, type: 3}
+  - {fileID: 5076614911063006419, guid: 16c2662a4c79f1e429f7f65ad74c0267, type: 3}
+  - {fileID: 5076614911063006419, guid: 082577156f2afd046a1e7163e0c57eea, type: 3}
+  - {fileID: 5076614911063006419, guid: 7ffd1e249d908134b9b56e7504a6996d, type: 3}
   m_spawnTime: 12
 --- !u!1 &738845648
 GameObject:
