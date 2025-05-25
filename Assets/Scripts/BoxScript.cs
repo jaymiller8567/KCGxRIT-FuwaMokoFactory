@@ -162,16 +162,17 @@ public class BoxScript : MonoBehaviour
 		{
 			ScoreScript.instance.addToScore(hitCreature.GetComponent<CreatureScript>().IsRainbow);
 		}
-		else if (hitCreature.GetComponent<CreatureScript>().Type == "fuwa" && boxNumber == 1)
-		{
-			TigerAnimationHandler.instance.rightPain();
-		}
-        else if (hitCreature.GetComponent<CreatureScript>().Type == "moco" && boxNumber == 2)
-        {
-            TigerAnimationHandler.instance.leftPain();
-        }
+
 		else
 		{
+			if (hitCreature.GetComponent<CreatureScript>().Type == "fuwa" && boxNumber == 1)
+			{
+				TigerAnimationHandler.instance.rightPain();
+			}
+			else if (hitCreature.GetComponent<CreatureScript>().Type == "moco" && boxNumber == 2)
+			{
+				TigerAnimationHandler.instance.leftPain();
+			}
 			//different kind
 			ScoreScript.instance.breakCombo();
 
