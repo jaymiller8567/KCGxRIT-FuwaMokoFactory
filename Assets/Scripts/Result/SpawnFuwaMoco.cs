@@ -39,7 +39,7 @@ public class SpawnFuwaMoco : MonoBehaviour
     {
         if (m_totalScore>0&& m_cnt--<0)
         {
-            int rnd = Random.Range(0, m_createObject.Length-1);@// ¦ 1`9‚Ì”ÍˆÍ‚Åƒ‰ƒ“ƒ_ƒ€‚È®”’l‚ª•Ô‚é
+            int rnd = Random.Range(0, m_createObject.Length-1);
             Instantiate(m_createObject[rnd], this.gameObject.transform.position, Quaternion.identity);
             m_totalScore --;
             m_cnt = m_spawnTime;
