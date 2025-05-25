@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CreatureManagerScript : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class CreatureManagerScript : MonoBehaviour
 	[SerializeField, Tooltip("second * 60fps")] private int[] spawnIntervalTimeArray;
 	[SerializeField, Tooltip("creatureSpeedUp")] private float speedCreatureUp;
 	[SerializeField, Tooltip("second * 60fps")] private int speedUpIntervalTime;
+	[SerializeField, Tooltip("ConveyorBeltImage")] private Image conveyorBeltImage;
 	private int speedUpLevel;
 	private int frame;
 
@@ -46,6 +48,8 @@ public class CreatureManagerScript : MonoBehaviour
 				{
 					++speedUpLevel;
 					Debug.Log("Speed Up");
+
+					conveyorBeltImage.GetComponent<ConveyorBeltLoop>().SpeedUp();
 
 					// Speed up existing creatures
 					foreach (var creature in creatureList)
