@@ -94,6 +94,11 @@ public class ScoreScript : MonoBehaviour
         {
             maxCombo = currentCombo;
         }
+
+        if (maxMultiplier <= currentMultiplier)
+        {
+            currentMultiplier = maxMultiplier;
+        }
     }
 
     /// <summary>

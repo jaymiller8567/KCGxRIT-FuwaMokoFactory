@@ -1322,27 +1322,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 257ec8425fdc39546aab625f978f4570, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &889088062
-Animator:
-  serializedVersion: 5
+--- !u!111 &889088062
+Animation:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 889088058}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 503623332b8fea8418be5ae329f876ee, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: 2fdd0998c6df527449b0ae3dc800f5d2, type: 2}
+  - {fileID: 7400000, guid: 22a727e6bde9b1a4c84daf273212fa67, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &900568402
 GameObject:
   m_ObjectHideFlags: 0
@@ -1507,7 +1503,6 @@ GameObject:
   - component: {fileID: 1086039638}
   - component: {fileID: 1086039640}
   - component: {fileID: 1086039641}
-  - component: {fileID: 1086039642}
   m_Layer: 0
   m_Name: RightTiger
   m_TagString: Untagged
@@ -1594,28 +1589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 257ec8425fdc39546aab625f978f4570, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &1086039641
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1086039637}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1c0abd4113c9d4a4385a62b1379325e5, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!111 &1086039642
+--- !u!111 &1086039641
 Animation:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1624,10 +1598,12 @@ Animation:
   m_GameObject: {fileID: 1086039637}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 22a727e6bde9b1a4c84daf273212fa67, type: 2}
-  m_Animations: []
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: 414c3db914fdf2243b8fa68788ecdd04, type: 2}
+  - {fileID: 7400000, guid: 3711c2aeb8b0cce4e943010292bf0d52, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
 --- !u!1 &1091270806
@@ -2760,6 +2736,7 @@ GameObject:
   - component: {fileID: 1681660233}
   - component: {fileID: 1681660235}
   - component: {fileID: 1681660236}
+  - component: {fileID: 1681660237}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2911,6 +2888,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1681660237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681660232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75c81572ee91a44448c64afe1de1dc53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftTiger: {fileID: 889088058}
+  rightTiger: {fileID: 1086039637}
+  painRightAnimName: Pain-right
+  angryRightAnimName: angry-right
+  painLeftAnimName: Pain-left
+  angryLeftAnimName: angry-left
 --- !u!1 &1789998387
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,8 +8,10 @@ public class TigerAnimationHandler : MonoBehaviour
     [SerializeField] private GameObject leftTiger;
     [SerializeField] private GameObject rightTiger;
 
-    [SerializeField] private string painAnimName;
-    [SerializeField] private string angryAnimName;
+    [SerializeField] private string painRightAnimName;
+    [SerializeField] private string angryRightAnimName;
+    [SerializeField] private string painLeftAnimName;
+    [SerializeField] private string angryLeftAnimName;
 
     private static TigerAnimationHandler _instance;
 
@@ -40,16 +42,16 @@ public class TigerAnimationHandler : MonoBehaviour
 
     public void leftPain()
     {
-        leftTiger.GetComponent<Animator>().Play(painAnimName);
-        rightTiger.GetComponent<Animator>().Play(angryAnimName);
+        leftTiger.GetComponent<Animation>().Play(painLeftAnimName);
+        rightTiger.GetComponent<Animation>().Play(angryRightAnimName);
         Debug.Log("playing left pain anim");
 
     }
 
     public void rightPain()
     {
-        rightTiger.GetComponent<Animator>().Play(painAnimName);
-        leftTiger.GetComponent<Animator>().Play(angryAnimName);
+        rightTiger.GetComponent<Animation>().Play(painRightAnimName);
+        leftTiger.GetComponent<Animation>().Play(angryLeftAnimName);
         Debug.Log("playing right pain anim");
 
     }
