@@ -72,7 +72,7 @@ public class CreatureManagerScript : MonoBehaviour
 			{
 				speedUpTextFrame += 1;
 
-				if (speedUpTextFrame >= 90)
+				if (speedUpTextFrame >= 80)
 				{
 					speedUpText.enabled = false;
 					speedUpTextFrame = 0;

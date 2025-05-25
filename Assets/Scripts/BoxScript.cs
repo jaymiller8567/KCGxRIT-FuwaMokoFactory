@@ -18,6 +18,9 @@ public class BoxScript : MonoBehaviour
 	[HideInInspector] public int boxNumber;
 	[SerializeField] private AudioClip inBox;
 
+	private bool destroyTimerStart = false;
+	private int destroyTimer = 0;
+
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -56,6 +59,7 @@ public class BoxScript : MonoBehaviour
 			{
 				//change sprite finish
 				FinishClose();
+				destroyTimerStart = true;
 			}
 
 			//sprite change number
@@ -65,6 +69,14 @@ public class BoxScript : MonoBehaviour
 			}
 		}
 
+		if (destroyTimerStart)
+		{
+			destroyTimer += 1;
+		}
+		if (destroyTimer >= 60)
+		{
+			Destroy(gameObject);
+		}
 
 		if (hitCreature == null) return;
 		if (hitCreature.GetComponent<DragAndDrop>() == null) return;
@@ -93,6 +105,8 @@ public class BoxScript : MonoBehaviour
 			}
 
 			spawnNextBoxOnce = true;
+
+			//Destroy(this.gameObject);
 		}
 	}
 
