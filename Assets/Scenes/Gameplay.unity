@@ -437,7 +437,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 90d2909b9b109454a94f60dd71546501, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1499,8 +1499,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   creaturePrefab: {fileID: 2231380602085275401, guid: 1824d8be09f796949ba67fac63b6fa84, type: 3}
   gameManager: {fileID: 1681660233}
-  spawnIntervalTimeArray: 5a0000003c00000028000000
-  speedCreatureUp: -1.3
+  spawnIntervalTimeArray: 370000002d00000020000000
+  speedCreatureUp: -2
   speedUpIntervalTime: 1800
   conveyorBeltImage: {fileID: 0}
   destroyPosition: -10
