@@ -18,7 +18,7 @@ public class CanvasSwitch : MonoBehaviour
         if (Input.anyKeyDown&& canvas[0].activeSelf==true)
         {
             canvas[0].SetActive(false);
-            canvas[1].SetActive(true);
+            canvas[1 ].SetActive(true);
         }
     }
 }

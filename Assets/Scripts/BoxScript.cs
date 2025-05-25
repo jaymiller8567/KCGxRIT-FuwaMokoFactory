@@ -29,37 +29,37 @@ public class BoxScript : MonoBehaviour
 	void Update()
 	{
 		if(start)
-        {
+		{
 			if (this.transform.position.y <= 0)
-            {
+			{
 				this.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
 				this.transform.position = new Vector3(this.transform.position.x, 0, 0);
 				start = false;
 			}
-            else
-            {
+			else
+			{
 				GetComponent<Rigidbody2D>().velocity += new Vector2(0, -5);
 			}
 		}
 
 		if(close && !spawnNextBoxOnce)
-        {
+		{
 			ColorChangeAlpha();
 
 			if (closeSpriteNum < closeSprite.Length) 
-            {
+			{
 				//close sprite change
 				this.GetComponent<SpriteRenderer>().sprite = closeSprite[closeSpriteNum];
 			}
-            else
-            {
+			else
+			{
 				//change sprite finish
 				FinishClose();
 			}
 
 			//sprite change number
-            if (++spriteNextTime % 3==0)
-            {
+			if (++spriteNextTime % 3==0)
+			{
 				++closeSpriteNum;
 			}
 		}
@@ -76,7 +76,7 @@ public class BoxScript : MonoBehaviour
 
 	//box close finish
 	private void FinishClose()
-    {
+	{
 		if (!spawnNextBoxOnce)
 		{
 			GetComponent<Rigidbody2D>().velocity += new Vector2(boxNumber == 1 ? 40 : -40, 0);
@@ -97,7 +97,7 @@ public class BoxScript : MonoBehaviour
 
 	//creature alpha change color
 	private void ColorChangeAlpha()
-    {
+	{
 		foreach (var creature in inCreatureArray)
 		{
 			var color = creature.GetComponent<SpriteRenderer>().color;
@@ -132,31 +132,50 @@ public class BoxScript : MonoBehaviour
 
 	public void InCreatureBox()
 	{
+		//on box creature
 		hitCreature.GetComponent<CreatureScript>().ResetVelocity();
-        hitCreature.GetComponent<CreatureScript>().IsCollected = true;
-        Destroy(hitCreature.GetComponent<DragAndDrop>());
-		inCreatureArray.Add(hitCreature);
+		hitCreature.GetComponent<CreatureScript>().IsCollected = true;
+		Destroy(hitCreature.GetComponent<DragAndDrop>());
 
-        if (hitCreature.GetComponent<CreatureScript>().IsRainbow) 
-        {
-            ScoreScript.instance.addToScore(true);
-        }
-		else if (!hitCreature.GetComponent<CreatureScript>().IsRainbow){
-            ScoreScript.instance.addToScore(false);
-        }
 
-		// If it's spiky?
+		//Check fuwa or moco type
+		if (hitCreature.GetComponent<CreatureScript>().Type == "moco" && boxNumber == 1)
+		{
+			ScoreScript.instance.addToScore(hitCreature.GetComponent<CreatureScript>().IsRainbow);
+		}
+		else if (hitCreature.GetComponent<CreatureScript>().Type == "fuwa" && boxNumber == 2)
+		{
+			ScoreScript.instance.addToScore(hitCreature.GetComponent<CreatureScript>().IsRainbow);
+		}
+		else
+		{
+			//different kind
+			ScoreScript.instance.breakCombo();
 
-        hitCreature = null;
+			//escape out screen
+			hitCreature.GetComponent<Rigidbody2D>().velocity = new Vector2(boxNumber == 1 ? 5 : -5, 10);
+			hitCreature.AddComponent<FrameDelete>().lifeTime = 120;
+			Debug.Log("Different Kind");
 
+			return;
+		}
+
+		//num plus
 		Num();
 	}
 
 	private void Num()
-    {
+	{
+		// add list
+		inCreatureArray.Add(hitCreature);
+
+		//creature max in box
 		if (++boxInCreatureNum == maxCreatureNum)
 		{
 			close = true;
 		}
+
+		//initialize
+		hitCreature = null;
 	}
 }
