@@ -33,7 +33,7 @@ public class BoxScript : MonoBehaviour
 			if (this.transform.position.y <= 0)
 			{
 				this.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
-				this.transform.position = new Vector3(this.transform.position.x, 0, 0);
+				this.transform.position = new Vector3(this.transform.position.x, 0, 1.0f);
 				start = false;
 			}
 			else
