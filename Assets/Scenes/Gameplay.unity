@@ -370,9 +370,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 0dc4108022f41cd4891ce97f09e18c66, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -397,14 +397,14 @@ RectTransform:
   m_GameObject: {fileID: 147443445}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 9.21, y: 9.21, z: 9.21}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 775179682}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.00036621094}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &272454040
@@ -1681,7 +1681,7 @@ MonoBehaviour:
   speedUpText: {fileID: 147443446}
   spawnIntervalTimeArray: 37000000280000001e000000
   speedCreatureUp: -2
-  speedUpIntervalTime: 300
+  speedUpIntervalTime: 1800
   conveyorBeltImage: {fileID: 1633202744}
   speedUpaudio: {fileID: 8300000, guid: 0fc0ec16c0523294197a62333c7c273f, type: 3}
   destroyPosition: -10
