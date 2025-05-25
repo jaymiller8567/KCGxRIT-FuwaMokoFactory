@@ -33,7 +33,7 @@ public class ConveyorBeltLoop : MonoBehaviour
 		var x = Mathf.Repeat(Time.time * m_offsetSpeed.x, k_maxLength);
 		var y = Mathf.Repeat(Time.time * m_offsetSpeed.y, k_maxLength);
 		var offset = new Vector2(x, y);
-		m_copiedMaterial.SetTextureOffset(k_propName, offset);
+		GetComponent<Image>().material.SetTextureOffset(k_propName, offset);
 	}
 
 	private void OnDestroy()
