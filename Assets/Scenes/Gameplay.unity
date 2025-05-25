@@ -362,7 +362,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 90d2909b9b109454a94f60dd71546501, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -983,6 +983,7 @@ GameObject:
   - component: {fileID: 889088060}
   - component: {fileID: 889088059}
   - component: {fileID: 889088061}
+  - component: {fileID: 889088062}
   m_Layer: 0
   m_Name: LeftTiger
   m_TagString: Untagged
@@ -1053,7 +1054,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.75, y: -3, z: 0}
   m_LocalScale: {x: 0.53, y: 0.53, z: 0.53}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1069,6 +1070,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 257ec8425fdc39546aab625f978f4570, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &889088062
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889088058}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 503623332b8fea8418be5ae329f876ee, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &900568402
 GameObject:
   m_ObjectHideFlags: 0
@@ -1232,6 +1254,8 @@ GameObject:
   - component: {fileID: 1086039639}
   - component: {fileID: 1086039638}
   - component: {fileID: 1086039640}
+  - component: {fileID: 1086039641}
+  - component: {fileID: 1086039642}
   m_Layer: 0
   m_Name: RightTiger
   m_TagString: Untagged
@@ -1318,6 +1342,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 257ec8425fdc39546aab625f978f4570, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1086039641
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1086039637}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1c0abd4113c9d4a4385a62b1379325e5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!111 &1086039642
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1086039637}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 22a727e6bde9b1a4c84daf273212fa67, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1091270806
 GameObject:
   m_ObjectHideFlags: 0
