@@ -50,6 +50,10 @@ public class CreatureScript : MonoBehaviour
 
         // Get game manager
         gameManager = Object.FindObjectsOfType<GameManager>()[0];
+        if (gameManager != null)
+        {
+            Debug.Log("Game manager found by creatures");
+        }
 
         // Set random color
         colorIndex = Random.Range(0, colors.Count);
