@@ -415,7 +415,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4368626207445690380, guid: bc7de468291e37e44876604a62c25ac3, type: 3}
       propertyPath: m_text
-      value: "\u30BF\u30A4\u30C8\u30EB!"
+      value: title
+      objectReference: {fileID: 0}
+    - target: {fileID: 4368626207445690380, guid: bc7de468291e37e44876604a62c25ac3, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 4096
       objectReference: {fileID: 0}
     - target: {fileID: 8247600385592054541, guid: bc7de468291e37e44876604a62c25ac3, type: 3}
       propertyPath: m_Name
