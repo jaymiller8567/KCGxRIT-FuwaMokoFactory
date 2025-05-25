@@ -164,11 +164,11 @@ public class BoxScript : MonoBehaviour
 		}
 		else if (hitCreature.GetComponent<CreatureScript>().Type == "fuwa" && boxNumber == 1)
 		{
-			TigerAnimationHandler.instance.rightPain();
+			//TigerAnimationHandler.instance.rightPain();
 		}
         else if (hitCreature.GetComponent<CreatureScript>().Type == "moco" && boxNumber == 2)
-        {
-            TigerAnimationHandler.instance.leftPain();
+        {//
+           // TigerAnimationHandler.instance.leftPain();
         }
 		else
 		{
