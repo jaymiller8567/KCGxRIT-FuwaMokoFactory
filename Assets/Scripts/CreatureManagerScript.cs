@@ -12,7 +12,8 @@ public class CreatureManagerScript : MonoBehaviour
 	[SerializeField, Tooltip("creatureSpeedUp")] private float speedCreatureUp;
 	[SerializeField, Tooltip("second * 60fps")] private int speedUpIntervalTime;
 	[SerializeField, Tooltip("ConveyorBeltImage")] private Image conveyorBeltImage;
-	private int speedUpLevel;
+	[SerializeField, Tooltip("Se")] private AudioClip speedUpaudio;
+ 	private int speedUpLevel;
 	private int frame;
 
 	[SerializeField] private float destroyPosition = -7.0f;
@@ -47,6 +48,7 @@ public class CreatureManagerScript : MonoBehaviour
 				if (spawnIntervalTimeArray.Length != speedUpLevel + 1)
 				{
 					++speedUpLevel;
+					GetComponent<AudioSource>().PlayOneShot(speedUpaudio);
 					Debug.Log("Speed Up");
 
 					conveyorBeltImage.GetComponent<ConveyorBeltLoop>().SpeedUp();
