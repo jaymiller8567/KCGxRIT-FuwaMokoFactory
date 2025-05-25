@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,7 +11,7 @@ public class ScoreScript : MonoBehaviour
     private float currentScore = 0;
     private int currentCombo = 0;
     private float currentMultiplier = 1;
-    private float numberMissed = 0;
+    private int numberMissed = 0;
     private int maxCombo = 0;
 
     private float maxMultiplier = 2.5f;
