@@ -1,7 +1,7 @@
 # FuwaMoko Factory
 Game Jam project created during RIT x KCG Game Jam over May 23-25th 2025 in Kyoto, Japan!
 
-***Software & Languagess Utilized: Unity 2D, C#, Adobe Photoshop*** 
+***Software & Languages Utilized: Unity 2D, C#, Adobe Photoshop*** 
 
 ## Game Jam Details:
 - 72-hour game jam in person with students from Kyoto Computer Gakuin (JP: 京都コンピュータ学院).
