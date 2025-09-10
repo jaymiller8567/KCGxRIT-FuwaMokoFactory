@@ -17,6 +17,7 @@ FuwaMoko Factory (JP: ふわふわもこもこ) is an arcade-style game where yo
 
 ## Game Jam Contributions:
 - Led team of 8 Japanese and American students, focusing on vertical slice production model while navigating language barriers by utilizing translation tools.
-- Helped formulate the game's visual identity by creating logos, easy-to-navigate menus, and unique character animation.
+- Helped formulate the game's visual identity by creating logos and unique character animation.
+- Developed UI and easy-to-navigate menus
 - Programmed and implemented scoring system for the core game loop.
 - Gave presentation of our project alongside KCG student representative to program faculty and other students, and was interviewed for KCG media.
